@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的GitHub Pages网站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-white">
+    <header class="container mx-auto px-4 py-8">
+        <nav class="flex justify-between items-center">
+            <div class="text-2xl font-bold">GitHub Pages</div>
+            <div class="space-x-6">
+                <a href="#" class="hover:text-blue-200 transition">首页</a>
+                <a href="#" class="hover:text-blue-200 transition">教程</a>
+                <a href="#" class="hover:text-blue-200 transition">关于</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <section class="text-center mb-16 fade-in">
+            <h1 class="text-5xl font-bold mb-6">使用GitHub搭建静态网站</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">免费、简单、快速的静态网站托管服务</p>
+            <div class="flex justify-center space-x-4">
+                <button class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                    开始使用
+                </button>
+                <button class="border-2 border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-700 transition">
+                    查看教程
+                </button>
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 card-hover transition duration-300 fade-in">
+                <div class="text-4xl mb-4"><i class="fas fa-bolt"></i></div>
+                <h3 class="text-2xl font-bold mb-3">快速部署</h3>
+                <p>只需推送代码到GitHub仓库，网站即自动部署上线</p>
+            </div>
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 card-hover transition duration-300 fade-in">
+                <div class="text-4xl mb-4"><i class="fas fa-lock"></i></div>
+                <h3 class="text-2xl font-bold mb-3">免费HTTPS</h3>
+                <p>自动提供免费SSL证书，确保网站安全访问</p>
+            </div>
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 card-hover transition duration-300 fade-in">
+                <div class="text-4xl mb-4"><i class="fas fa-code-branch"></i></div>
+                <h3 class="text-2xl font-bold mb-3">版本控制</h3>
+                <p>完整的Git版本控制，轻松管理网站内容更新</p>
+            </div>
+        </section>
+
+        <section class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-8">部署步骤</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">方法一：用户/组织站点</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>创建名为 <code class="bg-black bg-opacity-20 px-2 py-1 rounded">username.github.io</code> 的仓库</li>
+                        <li>在仓库根目录放置 <code class="bg-black bg-opacity-20 px-2 py-1 rounded">index.html</code> 文件</li>
+                        <li>进入 <strong>Settings</strong> > <strong>Pages</strong></li>
+                        <li>选择 <strong>Deploy from a branch</strong> 并指定分支</li>
+                        <li>网站将通过 <code class="bg-black bg-opacity-20 px-2 py-1 rounded">https://username.github.io</code> 访问</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">方法二：项目站点</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>在现有仓库中创建 <code class="bg-black bg-opacity-20 px-2 py-1 rounded">docs</code> 文件夹</li>
+                        <li>将网站文件放入 <code class="bg-black bg-opacity-20 px-2 py-1 rounded">docs</code> 文件夹</li>
+                        <li>进入 <strong>Settings</strong> > <strong>Pages</strong></li>
+                        <li>选择 <strong>Deploy from a branch</strong> 并指定 <code class="bg-black bg-opacity-20 px-2 py-1 rounded">docs</code> 文件夹</li>
+                        <li>网站将通过 <code class="bg-black bg-opacity-20 px-2 py-1 rounded">https://username.github.io/repository</code> 访问</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container mx-auto px-4 py-8 text-center text-gray-300">
+        <p>© 2023 GitHub Pages 静态网站部署指南. 使用 TailwindCSS 构建.</p>
+    </footer>
+</body>
+</html>
